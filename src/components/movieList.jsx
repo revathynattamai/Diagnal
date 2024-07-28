@@ -1,5 +1,5 @@
 import uuid from 'react-uuid';
-import { baseUrl } from './utils';
+import { baseUrl } from '../utils';
 import { memo } from 'react'
 import './App.css'
 
