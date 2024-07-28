@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('./fonts/Titillium_Web/TitilliumWeb-Black.ttf')
+}
+
+@font-face {
+  font-family: 'TitilliumWebLight';
+  src: url('./fonts/Titillium_Web/TitilliumWeb-Light.ttf')
+}
+
+@font-face {
+  font-family: 'TitilliumWebRegular';
+  src: url('./fonts/Titillium_Web/TitilliumWeb-Regular.ttf')
+}
+
+body {
+  font-family: 'TitilliumWeb', sans-serif;
+  background-color: #171717;
+  color:  #FFFFFF;
+}
+
