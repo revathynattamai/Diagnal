@@ -1,7 +1,7 @@
+import { memo } from 'react';
 import uuid from 'react-uuid';
 import { baseUrl } from '../utils';
-import { memo } from 'react'
-import './App.css'
+import '../App.css';
 
 const handleImgeError = (event) => {
     return event.target.src = "https://test.create.diagnal.com/images/placeholder_for_missing_posters.png";
