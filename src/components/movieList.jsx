@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import uuid from 'react-uuid';
 import { baseUrl } from '../utils';
 import '../App.css';

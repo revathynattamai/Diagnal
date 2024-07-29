@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { ErrorBoundary } from "react-error-boundary";
 import './App.css';
 import { baseUrl } from './utils';

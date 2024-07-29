@@ -1,13 +1,13 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import {defineConfig} from 'vitest/config'
+import {svelte} from '@sveltejs/vite-plugin-svelte'
+import {svelteTesting} from '@testing-library/svelte/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Diagnal",
-  plugins: [react()],
+  base: "/",
+  plugins: [svelte(), svelteTesting()],
   test: {
-    globals: true,
     environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts'],
+    setupFiles: ['./vitest-setup.js'],
   },
 })
