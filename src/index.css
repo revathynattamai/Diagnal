@@ -14,8 +14,12 @@
 }
 
 body {
+  margin: 0;
   font-family: 'TitilliumWeb', sans-serif;
   background-color: #171717;
   color:  #FFFFFF;
 }
 
+#root {
+  height: calc(100vh - 64px);
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { ErrorBoundary } from "react-error-boundary";
 import './App.css';
 import { baseUrl } from './utils';
+import { MyContext } from "./dataContext";
 
 const MovieList = lazy(() => import("./components/movieList"));
 
@@ -44,19 +45,6 @@ function App() {
     };
   }, [isReachBottom]);
 
-  const showNavBar = () => {
-    return (<div className='nav'>
-      <div className='left-nav'>
-        <img className='items' src={`${baseUrl}images/Back.png`} onClick={handleBack} />
-        <div className='items'>{data?.title} </div>
-      </div>
-      <div className='right-nav'>
-        <input type="text" value={searchTerm} onChange={(event) => handleSearchValueChange(event)}></input>
-        <img src={`${baseUrl}images/search.png`} onClick={handleSearch} />
-      </div>
-    </div>)
-  }
-
   const handleSearchValueChange = (event) => {
     setSearchTerm(event.target.value);
     if (event.target.value === "") {
@@ -82,13 +70,31 @@ function App() {
     setSearchTerm("");
   }
 
+   const showNavBar = () => {
+    return (<div className='nav'>
+      <div className='left-nav'>
+        <img className='items' src={`${baseUrl}images/Back.png`} onClick={handleBack} />
+        <div className='items'>{data?.title} </div>
+      </div>
+      <div className='right-nav'>
+        <input type="text" value={searchTerm} onChange={(event) => handleSearchValueChange(event)} onKeyDown={(e) => {
+        if (e.key === "Enter")
+          handleSearch()
+        }}></input>
+        <img src={`${baseUrl}images/search.png`} onClick={handleSearch} />
+      </div>
+    </div>)
+  }
+
   return (
-    <ErrorBoundary fallback={<p>Something went wrong</p>}>
-      {showNavBar()}
-      <Suspense fallback={<div>Loading</div>}>
-        <MovieList movies={movies} searchList={searchList} view={view} />
-      </Suspense>
-    </ErrorBoundary>
+      <ErrorBoundary fallback={<p>Something went wrong</p>}>
+        <Suspense fallback={<div>Loading</div>}>
+          {showNavBar()}
+          <MyContext.Provider value={{ movies, searchList, view }}>
+          <MovieList />
+          </MyContext.Provider>
+        </Suspense>
+      </ErrorBoundary >
   )
 }
 

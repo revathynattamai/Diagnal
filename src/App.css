@@ -33,10 +33,11 @@
     margin: 0px 10px;
     }
     input {
-        max-width: 40%;
+        max-width: 50%;
         cursor: pointer;
     }
 }
+
 
 .movieContainer {
     position: relative;
