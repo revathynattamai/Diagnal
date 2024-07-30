@@ -20,6 +20,6 @@ body {
   color:  #FFFFFF;
 }
 
-#root {
-  height: calc(100vh - 64px);
+html {
+  scrollbar-width: none;
 }
