@@ -2,7 +2,7 @@ import React, { memo, useContext } from 'react';
 import uuid from 'react-uuid';
 import { baseUrl } from '../utils';
 import '../App.css';
-import { MyContext } from '../dataContext';
+import { MovieContext } from '../dataContext';
 
 const handleImgeError = (event) => {
     return event.target.src = "https://test.create.diagnal.com/images/placeholder_for_missing_posters.png";
@@ -19,7 +19,7 @@ const showMovieList = (movies) => {
 }
 
 const MovieList = memo(function MovieList() {
-    const { movies, searchList, view } = useContext(MyContext);
+    const { movies, searchList, view } = useContext(MovieContext);
     return (
         <div className='movieContainer'>
             {view === "main" && showMovieList(movies)}

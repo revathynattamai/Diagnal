@@ -13,6 +13,11 @@
   src: url('./fonts/Titillium_Web/TitilliumWeb-Regular.ttf')
 }
 
+@font-face {
+  font-family: 'TitilliumWebSemiBold';
+  src: url('./fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf')
+}
+
 body {
   margin: 0;
   font-family: 'TitilliumWeb', sans-serif;
@@ -22,4 +27,8 @@ body {
 
 html {
   scrollbar-width: none;
+}
+
+input {
+  font-family: 'TitilliumWebSemiBold', sans-serif;
 }
